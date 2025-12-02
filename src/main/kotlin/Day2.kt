@@ -1,4 +1,4 @@
-data class Range(val start: Long, val end: Long) {
+class Range(val start: Long, val end: Long) {
     init {
         require(start <= end) { "Start must be less than or equal to end" }
     }
