@@ -18,11 +18,8 @@ class SecurityDevice(
         }
 
         repeat(instruction.steps) {
-            // Check condition before moving
             if (currentPosition == 0) passcode++
 
-            // Use modulo arithmetic for wrap-around movement (0 <-> maxPosition)
-            // .mod() ensures the result is always positive within the range
             currentPosition = (currentPosition + delta).mod(maxPosition + 1)
         }
     }
