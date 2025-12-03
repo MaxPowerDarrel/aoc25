@@ -18,13 +18,12 @@ fun isValidId(id: Long): Boolean {
     }
 }
 
-fun parseInput() = ClassLoader.getSystemResource("Day2.txt").readText().splitToSequence(",").flatMap { range ->
+
+fun main() {
+    ClassLoader.getSystemResource("Day2.txt").readText().splitToSequence(",").flatMap { range ->
         Range(
             range.substringBefore("-").toLong(), range.substringAfter("-").toLong()
         ).filter(::isValidId)
-    }
 
-
-fun main() {
-    println(parseInput().sum())
+    }.sum().also(::println)
 }

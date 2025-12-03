@@ -1,7 +1,7 @@
-sealed class Direction(val delta: Int) {
-    object LEFT : Direction(-1)
-    object RIGHT : Direction(1)
-}
+sealed class Direction(val delta: Int)
+
+object LEFT : Direction(-1)
+object RIGHT : Direction(1)
 
 data class Instruction(val direction: Direction, val steps: Int)
 
@@ -20,8 +20,8 @@ class SecurityDevice(
 }
 
 private fun String.toInstruction(): Instruction = when (this.firstOrNull()) {
-    'R' -> Instruction(Direction.RIGHT, substring(1).toInt())
-    'L' -> Instruction(Direction.LEFT, substring(1).toInt())
+    'R' -> Instruction(RIGHT, substring(1).toInt())
+    'L' -> Instruction(LEFT, substring(1).toInt())
     else -> throw IllegalArgumentException("Invalid direction: $this")
 }
 
