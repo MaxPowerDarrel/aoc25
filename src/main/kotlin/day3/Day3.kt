@@ -1,3 +1,5 @@
+package day3
+
 /**
  * Finds the index of the largest digit within the specified range [startIndex, endIndex).
  * Returns -1 if no digit is found.

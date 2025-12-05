@@ -1,3 +1,5 @@
+package day1
+
 sealed class Direction(val delta: Int)
 
 object LEFT : Direction(-1)
